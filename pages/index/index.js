@@ -1,6 +1,6 @@
-const conf = {
-  data: {
-    hasEmptyGrid: false
+Page({
+    data: {
+    hasEmptyGrid: false,
   },
   onLoad(options) {
     const date = new Date();
@@ -43,9 +43,12 @@ const conf = {
     let days = [];
 
     const thisMonthDays = this.getThisMonthDays(year, month);
+    
+
 
     for (let i = 1; i <= thisMonthDays; i++) {
-
+            let str=''+year+month+i
+                  
     
 // 在这里添加判断事件
 
@@ -101,6 +104,4 @@ const conf = {
       path: 'pages/index/index'
     }
   }
-};
-
-Page(conf);
+})
