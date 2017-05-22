@@ -42,31 +42,35 @@ Page({
   },
   calculateDays(year, month) {
     let days = [];
-    let dte=[{day:"2017523",price:2000}]
-
+    let dte=[{day:"2017523",price:2000},{day:"2017524",price:2000},{day:"2017526",price:2000},{day:"2017527",price:2000},{day:"2017528",price:2000}]
+    var str = dte[0].day.split('').splice(0,5).join("");
+    var str1 = ""+year+month;
+    var arr=[]
     const thisMonthDays = this.getThisMonthDays(year, month);
-    
-  
 
-    for (let i = 1; i <= thisMonthDays; i++) {
-        var str = ""+year+month+i
- 
-        for (var index = 0; index < dte.length; index++) {
-              var str1 = dte[index].day
-              var price = dte[index].price
-               if (str1==str) {
-                    days.push({day:i,price:price});
-               } else {
-                    days.push({day:i});
-               }
-                 
-        } 
+   for(let i=0;i<dte.length;i++){
+       var str = dte[i].day.split('').splice(0,5).join("");
+       var str1 = ""+year+month;
+      if(str1==str){
+        arr.push(dte[i])
+      }
+   }
+      console.log(arr[1].day)
     
 
 
 
-     
-    }
+
+
+
+
+
+
+
+
+
+
+
 
     this.setData({
       days
