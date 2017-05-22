@@ -1,6 +1,7 @@
 Page({
     data: {
     hasEmptyGrid: false,
+    
   },
   onLoad(options) {
     const date = new Date();
@@ -41,19 +42,30 @@ Page({
   },
   calculateDays(year, month) {
     let days = [];
+    let dte=[{day:"2017523",price:2000}]
 
     const thisMonthDays = this.getThisMonthDays(year, month);
     
-
+  
 
     for (let i = 1; i <= thisMonthDays; i++) {
-            let str=''+year+month+i
-                  
+        var str = ""+year+month+i
+ 
+        for (var index = 0; index < dte.length; index++) {
+              var str1 = dte[index].day
+              var price = dte[index].price
+               if (str1==str) {
+                    days.push({day:i,price:price});
+               } else {
+                    days.push({day:i});
+               }
+                 
+        } 
     
-// 在这里添加判断事件
 
 
-      days.push({day:i});
+
+     
     }
 
     this.setData({

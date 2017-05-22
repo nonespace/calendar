@@ -16,10 +16,10 @@
             <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
             </view>
             <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}">
-                <view class="day {{}} box box-align-center box-pack-center">
-                {{item.day}}
-                <view>{{item.price}}</view>
-                
+                <view class="day  box box-align-center box-pack-center">
+                <view>{{item.day}}</view>
+                <text>{{item.price}}</text>
+
                 </view>
                 
             </view>
