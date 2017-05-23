@@ -42,9 +42,9 @@ Page({
   },
   calculateDays(year, month) {
     let days = [];
-    let dte=[{day:"2017523",price:2000},{day:"2017524",price:2000},{day:"2017526",price:2000},{day:"2017527",price:2000},{day:"2017528",price:2000}]
+    let dte=[{day:"2017523",price:2017523},{day:"2017524",price:2017523},{day:"2017526",price:2017523},{day:"2017527",price:2017523},{day:"2017528",price:2017523}]
     var str = dte[0].day.split('').splice(0,5).join("");
-    var str1 = ""+year+month;
+
     var arr=[]
     const thisMonthDays = this.getThisMonthDays(year, month);
 
@@ -55,22 +55,37 @@ Page({
         arr.push(dte[i])
       }
    }
-      console.log(arr[1].day)
+   
+ for (var index = 0; index < thisMonthDays; index++) {
+    if (typeof(arr[index])=="undefined") {
+      arr[index]={day:'',price:''}
+    } 
+ }
+//  console.log(arr)
     
 
+      // for (var j = 0; j < thisMonthDays; j++) {
 
+      //       var str2=""+year+month+j
+            
 
+        for (var idex = 0; idex < arr.length; idex++) {
+          var str2=""+year+month+idex
+          var str3=arr[idex].day;
+          var str4= arr[idex].price;
+          if (str2==str3) {
+            // days[idex]={day:idex,price:str4}
+            console.log(str3)
+          } else {
+             days.push({day:idex,price:''})
+          }
+      }
+      // }
 
-
-
-
-
-
-
-
-
-
-
+        
+      arr=days.splice(arr.length)
+      console.log(days)
+    
 
     this.setData({
       days

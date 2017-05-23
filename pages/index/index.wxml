@@ -15,9 +15,9 @@
         <view class="days box box-lr box-wrap">
             <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
             </view>
-            <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}">
-                <view class="day  box box-align-center box-pack-center">
-                <view>{{item.day}}</view>
+            <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="" data-idx="{{index}}">
+                <view class="day  box box-align-center box-pack-center" style="flex-wrap:wrap">
+                <view>{{item.day+1}}</view>
                 <text>{{item.price}}</text>
 
                 </view>
