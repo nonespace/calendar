@@ -19,6 +19,7 @@
                 <view class="day {{}} box box-align-center box-pack-center">
                 {{item.day}}
                 <view>{{item.price}}</view>
+                 <view>{{item.price_adult_list}}</view>
                 
                 </view>
                 

@@ -41,17 +41,120 @@ const conf = {
   },
   calculateDays(year, month) {
     let days = [];
+    var list = [
+      {
+        "id": "100934",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-08-05",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100933",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-08-04",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100932",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-08-03",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100931",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-08-02",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100930",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-08-01",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100929",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-07-29",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100928",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-07-28",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100919",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-07-27",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100927",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-07-26",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100926",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-07-25",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100920",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-07-22",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100921",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-07-21",
+        "price_adult_agency": "1890.00"
+      },
+      {
+        "id": "100924",
+        "price_adult_list": "2190.00",
+        "start_time": "2017-07-20",
+        "price_adult_agency": "1890.00"
+      }
+    ]
+  
+  month=month>9?month:"0"+month;
+    var yue=year+"-"+month
+
+   
+      var arr = new Array()
+  
+      for (var j = 0; j < list.length; j++) {
+        var a =list[j].start_time.slice(0,7)
+ 
+        if (yue == a) {
+          arr.push(list[j])
+        }
+      
+      }
 
     const thisMonthDays = this.getThisMonthDays(year, month);
 
     for (let i = 1; i <= thisMonthDays; i++) {
-
-    
-// 在这里添加判断事件
-
-
-      days.push({day:i});
+      days.push({ day: i });
     }
+
+    for(var k=0;k<arr.length;k++){
+      var number = parseInt(arr[k].start_time.slice(8, 10))
+      days[number] = { day: number, price_adult_list: arr[k].price_adult_list, price_adult_agency: arr[k].price_adult_agency}
+      console.log(number)
+    }
+
+
+
+
+
+
+
 
     this.setData({
       days
