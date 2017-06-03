@@ -100,24 +100,24 @@ const conf = {
         "id": "100926",
         "price_adult_list": "2190.00",
         "start_time": "2017-07-25",
-        "price_adult_agency": "1890.00"
+        "price_adult_agency": "1850.00"
       },
       {
         "id": "100920",
         "price_adult_list": "2190.00",
-        "start_time": "2017-07-22",
+        "start_time": "2017-06-22",
         "price_adult_agency": "1890.00"
       },
       {
         "id": "100921",
         "price_adult_list": "2190.00",
-        "start_time": "2017-07-21",
-        "price_adult_agency": "1890.00"
+        "start_time": "2017-06-21",
+        "price_adult_agency": "1590.00"
       },
       {
         "id": "100924",
         "price_adult_list": "2190.00",
-        "start_time": "2017-07-20",
+        "start_time": "2017-06-20",
         "price_adult_agency": "1890.00"
       }
     ]
@@ -144,8 +144,21 @@ const conf = {
     }
 
     for(var k=0;k<arr.length;k++){
-      var number = parseInt(arr[k].start_time.slice(8, 10))
-      days[number] = { day: number, price_adult_list: arr[k].price_adult_list, price_adult_agency: arr[k].price_adult_agency}
+      var number = parseInt(arr[k].start_time.slice(8, 10))-1;
+
+    
+
+
+
+      var price_adult_list = arr[k].price_adult_list.substring(0, arr[k].price_adult_list.length - 3)
+
+      var price_adult_agency = arr[k].price_adult_agency.substring(0, arr[k].price_adult_agency.length - 3)
+
+
+
+      days[number] = { price_adult_list: price_adult_list, price_adult_agency: price_adult_agency}
+      // days[number] = arr[k]
+
       console.log(number)
     }
 

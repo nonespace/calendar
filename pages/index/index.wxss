@@ -147,3 +147,11 @@
     border-top-right-radius: 20rpx;
     border-bottom-right-radius: 20rpx;
 }
+view{
+  text-align: center
+}
+.small{
+  transform: scale(0.8);
+  width: 100%;
+  text-align: center;
+}
